@@ -7,10 +7,6 @@ import { Timer } from './entities/timer.entity';
 export class TimerController {
   constructor(private readonly timerService: TimerService) {}
 
-  @Post()
-  create(@Body() createTimerDto: CreateTimerDto) {
-    return this.timerService.create(createTimerDto);
-  }
 
   @Get()
   findAll(): Promise<Timer[]> {
@@ -31,4 +27,11 @@ export class TimerController {
   remove(@Param('id') id: string) {
     return this.timerService.remove(+id);
   }
+
+  @Post('stop')
+  stopTimer(@Body() timerValues: CreateTimerDto): void {
+    this.timerService.stopTimer(timerValues);
+  }
+
+  
 }

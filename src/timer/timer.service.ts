@@ -18,11 +18,7 @@ export class TimerService {
   ) { }
 
   async create(createTimerDto: CreateTimerDto): Promise<Timer> {
-    const timerPartial: DeepPartial<Timer> = {
-      hours: createTimerDto.hours,
-      minutes: createTimerDto.minutes,
-      seconds: createTimerDto.seconds,
-    };
+    const timerPartial: DeepPartial<Timer> = createTimerDto;
     const timer = this.timerRepository.create(timerPartial);
     const savedTimer = await this.timerRepository.save(timer);
     return savedTimer;
@@ -67,5 +63,16 @@ export class TimerService {
     }
     return { message: 'Timer successfully deleted' };
   }
+
+  async stopTimer(timerValues: CreateTimerDto) : Promise<void>{
+      console.log('Timer stopped');
+      console.log('Timer values:', timerValues);
+      const timer = this.timerRepository.create(timerValues);
+      const savedTimer = await this.timerRepository.save(timer);
+      console.log('Timer saved to the database:', savedTimer);
+      
+   }
+
 }
+
 
