@@ -6,6 +6,9 @@ export class Timer {
     timerID : number
 
     @Column()
+    punchName : string
+
+    @Column()
     hours : number
 
     @Column()

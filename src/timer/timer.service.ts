@@ -51,6 +51,7 @@ export class TimerService {
     timer.hours = updateTimerDto.hours;
     timer.minutes = updateTimerDto.minutes;
     timer.seconds = updateTimerDto.seconds;
+    timer.punchName = updateTimerDto.punchName;
 
     return await this.timerRepository.save(timer);
   }

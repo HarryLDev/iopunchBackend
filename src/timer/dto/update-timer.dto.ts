@@ -5,5 +5,6 @@ export class UpdateTimerDto {
     hours: number;
     minutes: number;
     seconds: number;
+    punchName: string;
   }
   
