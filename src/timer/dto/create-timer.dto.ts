@@ -1,6 +1,6 @@
 export class CreateTimerDto {
-  hour: number;
-  minute: number;
-  second: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
   punchName: string;
 }
