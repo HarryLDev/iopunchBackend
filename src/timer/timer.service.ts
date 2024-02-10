@@ -48,9 +48,9 @@ export class TimerService {
       throw new NotFoundException(`Timer with ID ${id} not found`);
     }
 
-    timer.hours = updateTimerDto.hours;
-    timer.minutes = updateTimerDto.minutes;
-    timer.seconds = updateTimerDto.seconds;
+    timer.hour = updateTimerDto.hour;
+    timer.minute = updateTimerDto.minute;
+    timer.second = updateTimerDto.second;
     timer.punchName = updateTimerDto.punchName;
 
     return await this.timerRepository.save(timer);

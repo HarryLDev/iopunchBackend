@@ -9,13 +9,13 @@ export class Timer {
     punchName : string
 
     @Column()
-    hours : number
+    hour : number
 
     @Column()
-    minutes : number
+    minute : number
 
     @Column()
-    seconds : number
+    second : number
 
 }
 
