@@ -62,7 +62,7 @@ export class TimerService {
     if (result.affected === 0) {
       throw new NotFoundException(`Timer "${id}" was not found`);
     }
-    return { message: 'Timer successfully deleted' };
+    return { message: `Timer "${id}" successfully deleted` };
   }
 
   async stopTimer(timerValues: CreateTimerDto) : Promise<void>{
